@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Extract page links with curl By B4GG3R"
+
+for a in $(cat $1); do curl -s $a/ | grep -Eo '(http|https)://[^<"]+'  | grep "$2" && echo "URL: $a"; done
